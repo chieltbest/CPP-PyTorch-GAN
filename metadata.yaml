@@ -5,50 +5,27 @@
 #  - For a successful replication, it should be prefixed with "[Re]"
 #  - For a failed replication, it should be prefixed with "[¬Re]"
 #  - For other article types, no instruction (but please, not too long)
-title: "ReScience (R)evolution"
+title: "[Re] Generative Adversarial Networks"
 
 # List of authors with name, orcid number, email and affiliation
 # Affiliation "*" means contact author (required even for single-authored papers)
 authors:
-  - name: Konrad Hinsen
-    orcid: 0000-0003-0330-9428
-    email: konrad.hinsen@cnrs.fr
-    affiliations: 1,2
-    
-  - name: Nicolas P. Rougier
-    orcid: 0000-0002-6972-589X
-    email: Nicolas.Rougier@inria.fr
-    affiliations: 3,4,5,*      # * is for contact author
+  - name: Chiel Douwes
+    orcid: 0000-0002-2884-856X
+    email: chiel@chieldouwes.nl
+    affiliations: 1,* # * is for contact author
 
 # List of affiliations with code (corresponding to author affiliations), name
 # and address. You can also use these affiliations to add text such as "Equal
 # contributions" as name (with no address).
 affiliations:
   - code:    1
-    name:    Centre de Biophysique Moléculaire, CNRS UPR4301
-    address: Orléans, France
-    
-  - code:    2
-    name:    Synchrotron SOLEIL, Division Expériences
-    address: Gif sur Yvette, France
-    
-  - code:    3
-    name:    INRIA Bordeaux Sud-Ouest
-    address: Bordeaux, France
-    
-  - code:    4
-    name:    LaBRI, Université de Bordeaux, Institut Polytechnique de Bordeaux,
-             Centre National de la Recherche Scientifique, UMR 5800
-    address: Talence, France
-    
-  - code:    5
-    name:    Institut des Maladies Neurodégénératives, Université  de Bordeaux,
-             Centre National de la Recherche Scientifique, UMR 5293
-    address: Bordeaux, France
+    name:    Hogeschool Utrecht
+    address: Utrecht, The Netherlands
 
 
 # List of keywords (adding the programming language might be a good idea)
-keywords: rescience c, rescience x
+keywords: rescience c, rescience x, C++, GAN
 
 # Code URL and DOI/SWH (url is mandatory for replication, doi after acceptance)
 # You can get a DOI for your code from Zenodo, or an SWH identifier from
@@ -66,22 +43,22 @@ data:
 
 # Information about the original article that has been replicated
 replication:
- - cite: # Full textual citation
+ - cite: Goodfellow, I., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley, D., Ozair, S., ... & Bengio, Y. (2014). Generative adversarial nets. Advances in neural information processing systems, 27. # Full textual citation
  - bib:  # Bibtex key (if any) in your bibliography file
- - url:  # URL to the PDF, try to link to a non-paywall version
+ - url:  https://arxiv.org/pdf/1406.2661v1 # URL to the PDF, try to link to a non-paywall version
  - doi:  # Regular digital object identifier
 
 # Don't forget to surround abstract with double quotes
-abstract: "Three years have passed since ReScience published its first article
-           and since September 2015, things have been going steadily. We're
-           still alive, independent and without a budget. In the meantime, we
-           have published around 20 articles (mostly in computational
-           neuroscience & computational ecology) and the initial has grown
-           from around 10 to roughly 100 members (editors and reviewers), we
-           have advertised ReScience at several conferences worldwide, gave
-           some interviews and we published an article introducing ReScience in
-           PeerJ. Based on our experience at managing the journal during these
-           three years, we think the time is ripe for proposing some changes."
+abstract: "We propose a new framework for estimating generative models via an adversarial process,
+           in which we simultaneously train two models: a generative model G that captures the data distribution,
+           and a discriminative model D that estimates the probability that a sample came from the training data
+           rather than G. The training procedure for G is to maximize the probability of D making a mistake.
+           This framework corresponds to a minimax two-player game. In the space of arbitrary functions G and D,
+           a unique solution exists, with G recovering the training data distribution and D equal to 1/2 everywhere.
+           In the case where G and D are defined by multilayer perceptrons, the entire system can be trained with backpropagation.
+           There is no need for any Markov chains or unrolled approximate inference networks during either training or
+           generation of samples. Experiments demonstrate the potential of the framework through qualitative and
+           quantitative evaluation of the generated samples."
 
 # Bibliography file (yours)
 bibliography: bibliography.bib
@@ -98,7 +75,7 @@ type: Editorial
 domain: 
 
 # Coding language (main one only if several)
-language:
+language: C++
 
   
 # To be filled by the author(s) after acceptance

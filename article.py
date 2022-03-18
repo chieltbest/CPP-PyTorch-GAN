@@ -104,7 +104,7 @@ class Date:
 class Article:
     def __init__(self, data):
         self.title = ""
-        self.absract = ""
+        self.abstract = ""
         self.type = ""
         self.domain = ""
         self.language = ""

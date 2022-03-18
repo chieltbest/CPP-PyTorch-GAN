@@ -2,6 +2,7 @@
 
 \def \codeURL{https://github.com/rescience-c/template}
 \def \codeDOI{}
+\def \codeSWH{}
 \def \dataURL{}
 \def \dataDOI{}
 \def \editorNAME{}
@@ -13,34 +14,29 @@
 \def \dateRECEIVED{01 November 2018}
 \def \dateACCEPTED{}
 \def \datePUBLISHED{}
-\def \articleTITLE{ReScience (R)evolution}
+\def \articleTITLE{[Re] Generative Adversarial Networks}
 \def \articleTYPE{Editorial}
 \def \articleDOMAIN{}
 \def \articleBIBLIOGRAPHY{bibliography.bib}
-\def \articleYEAR{2019}
+\def \articleYEAR{2022}
 \def \reviewURL{}
-\def \articleABSTRACT{Three years have passed since ReScience published its first article and since September 2015, things have been going steadily. We're still alive, independent and without a budget. In the meantime, we have published around 20 articles (mostly in computational neuroscience \& computational ecology) and the initial has grown from around 10 to roughly 100 members (editors and reviewers), we have advertised ReScience at several conferences worldwide, gave some interviews and we published an article introducing ReScience in PeerJ. Based on our experience at managing the journal during these three years, we think the time is ripe for proposing some changes.}
-\def \replicationCITE{}
+\def \articleABSTRACT{We propose a new framework for estimating generative models via an adversarial process, in which we simultaneously train two models: a generative model G that captures the data distribution, and a discriminative model D that estimates the probability that a sample came from the training data rather than G. The training procedure for G is to maximize the probability of D making a mistake. This framework corresponds to a minimax two-player game. In the space of arbitrary functions G and D, a unique solution exists, with G recovering the training data distribution and D equal to 1/2 everywhere. In the case where G and D are defined by multilayer perceptrons, the entire system can be trained with backpropagation. There is no need for any Markov chains or unrolled approximate inference networks during either training or generation of samples. Experiments demonstrate the potential of the framework through qualitative and quantitative evaluation of the generated samples.}
+\def \replicationCITE{Goodfellow, I., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley, D., Ozair, S., ... & Bengio, Y. (2014). Generative adversarial nets. Advances in neural information processing systems, 27.}
 \def \replicationBIB{}
-\def \replicationURL{}
+\def \replicationURL{https://arxiv.org/pdf/1406.2661v1}
 \def \replicationDOI{}
-\def \contactNAME{Nicolas P. Rougier}
-\def \contactEMAIL{Nicolas.Rougier@inria.fr}
-\def \articleKEYWORDS{rescience c, rescience x}
+\def \contactNAME{Chiel Douwes}
+\def \contactEMAIL{chiel@chieldouwes.nl}
+\def \articleKEYWORDS{rescience c, rescience x, C++, GAN}
 \def \journalNAME{ReScience C}
 \def \journalVOLUME{4}
 \def \journalISSUE{1}
 \def \articleNUMBER{}
 \def \articleDOI{}
-\def \authorsFULL{Konrad Hinsen and Nicolas P. Rougier}
-\def \authorsABBRV{K. Hinsen and N.P. Rougier}
-\def \authorsSHORT{Hinsen and Rougier}
+\def \authorsFULL{Chiel Douwes}
+\def \authorsABBRV{C. Douwes}
+\def \authorsSHORT{Douwes}
 \title{\articleTITLE}
 \date{}
-\author[1,2,\orcid{0000-0003-0330-9428}]{Konrad Hinsen}
-\author[3,4,5,\orcid{0000-0002-6972-589X}]{Nicolas P. Rougier}
-\affil[1]{Centre de Biophysique Moléculaire, CNRS UPR4301, Orléans, France}
-\affil[2]{Synchrotron SOLEIL, Division Expériences, Gif sur Yvette, France}
-\affil[3]{INRIA Bordeaux Sud-Ouest, Bordeaux, France}
-\affil[4]{LaBRI, Université de Bordeaux, Institut Polytechnique de Bordeaux, Centre National de la Recherche Scientifique, UMR 5800, Talence, France}
-\affil[5]{Institut des Maladies Neurodégénératives, Université  de Bordeaux, Centre National de la Recherche Scientifique, UMR 5293, Bordeaux, France}
+\author[1,\orcid{0000-0002-2884-856X}]{Chiel Douwes}
+\affil[1]{Hogeschool Utrecht, Utrecht, The Netherlands}
