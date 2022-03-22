@@ -1,14 +1,58 @@
 
-(Abstract)
+In 2014 Goodfellow et al. proposed a framework for creating image generating models
+using an adversarial loss function during training.
+The aim of this loss function is for the generator model (G) to minimize the probability
+for the discriminator (D) to recognize the output of G as fake, while the aim for D
+is to minimize the probability of recognizing the output of G as real, while maximizing the
+probability that D recognizes the ground truth as real.
+In theory after training G it will then produce images that D cannot distinguish from the ground
+truth.
 
-\section{Introduction}
+\section{Introduction}\label{sec:introduction}
+Image generation has long been an active field of study, but only in recent years have unsupervised
+models been successful in creating high quality images after the advent of adversarial networks.
+Previous techniques such as restricted Boltzmann machines have previously been used for image
+generation to various levels of success,
+
+\section{Methods}\label{sec:methods}
+For the implementation, the C++ interface of PyTorch was used, along with png++ for data loading.
+First the dataset is normalized to have a mean of 0 and a standard deviation of 1.0, after which
+it is processed into batches of 64 to 128 elements, depending on the problem and the desired
+learning rate.
+
+\subsection{MNIST}\label{subsec:mnist}
+The discriminator model used for MNIST has a latent space of 100 variables, hidden layers of
+sizes 256 and 128.
+On the hidden layers of the discriminator model ReLU activation with dropout is used for each
+layer, with a sigmoid activation layer as output.
+Furthermore, the generator model consists of hidden layers of sizes 128, 256, and 512, with leaky
+ReLU activation and dropout applied to each layer.
+
+\subsection{FFHQ}\label{subsec:ffhq}
+The FFHQ (Flickr Faces High Quality) database is a database of high-quality images of faces
+gathered from Flickr.
+Because of computational constraints the chosen image size from the database is 128x128.
+The images can be downloaded using the included download script in the dataset folder.
+Two different models are tested for the FFHQ dataset: one fully connected model and one model 
+based on convolutional layers, with different results.
+
+\subsubsection{Fully connected}
+The fully connected model uses the same hidden layer composition as the MNIST model, with sizes
+256 and 128 on the discriminator model, sizes 32, 64, 128, and 256 on the generator model, and a
+latent space of 32 variables.
+
+\subsubsection{Convolutional}
+As an alternative for the fully connected model it is also possible to use a convolutional model.
+This model consists of several convolutional layers and fully connected layers, allowing for both
+positional dependent and positional independent information encoding.
+The layers of the discriminator model are three convolutional layers of kernel size 5 and with
+64, 128, and 256 output features, connected to fully connected layers of sizes 256, 64, and 32.
+The generator has fully connected layers of 64 and 128, which is connected to deconvolutional
+layers with a kernel size of 5, with 64, 32, 16, and 8 features.
+
+\section{Results}\label{sec:results}
 
 
-\section{Methods}
-
-
-\section{Results}
-
-
-\section{Discussion}
-
+\section{Discussion}\label{sec:discussion}
+In general a slower learning rate comes with a better chance of convergence, and combined with a
+lower variance between batches that comes with bigger batch sizes
